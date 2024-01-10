@@ -1,25 +1,27 @@
-import react from 'react';
-import "bootstrap/dist/css/bootstrap.min.css"
-import "bootstrap/dist/js/bootstrap.bundle.min.js" 
-import Login from './Project/Login';
+
+import React from "react";
+import Login from "./Project/Login";
+import Register from "./Project/Register";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {BrowserRouter,Routes,Route} from "react-router-dom";
+import Nav from "./Project/Nav";
+import Forgetpassword from "./Project/Forgetpassword";
 import Home from './Project/Home';
-import Nav from './Project/Nav';
-import {BrowserRouter,Route,Routes}from "react-router-dom"
 
 function App() {
   return (
-    <BrowserRouter>
     <div>
+      <BrowserRouter>
       <Nav/>
-
-
       <Routes>
-        <Route exact path='/' element={<Home/>}/>
-        <Route exact path='/Home' element={<Home/>}/>
-        <Route exact path='/Login' element={<Login/>}/>
+      <Route exact path="/Login" element={<Login/>}/>
+      <Route exact path="/Register" element={<Register/>}/>
+      <Route exact path="/Forgetpassword" element={<Forgetpassword/>}/>
+      <Route exact path='/Home' element={<Home/>}/>
+
       </Routes>
+      </BrowserRouter>
     </div>
-    </BrowserRouter>
   );
 }
 
