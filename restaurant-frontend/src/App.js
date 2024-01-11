@@ -1,6 +1,6 @@
 
 import React from "react";
-import Login from "./Project/Login";
+import Login from "./Project/Custumerlogin";
 import Register from "./Project/Register";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter,Routes,Route} from "react-router-dom";
