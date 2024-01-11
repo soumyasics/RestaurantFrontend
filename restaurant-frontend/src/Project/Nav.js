@@ -9,7 +9,7 @@ function Nav() {
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
-            My page
+            Restaurant Page
           </a>
           <button
             class="navbar-toggler"
@@ -23,19 +23,24 @@ function Nav() {
             <span class="navbar-toggler-icon"></span>
           </button>
           <ul class="nav justify-content-end">
-          <li class="nav-item">
+            <li class="nav-item">
+              <Link class="nav-link active" aria-current="page" to="/Register">
+                Staff Register
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link class="nav-link active" aria-current="page" to="/Login">
+                Staff login
+              </Link>
+            </li>
+            <li class="nav-item">
               <Link class="nav-link active" aria-current="page" to="/Forgetpassword">
                 Forget Password
               </Link>
             </li>
             <li class="nav-item">
-              <Link class="nav-link active" aria-current="page" to="/Register">
-                Register
-              </Link>
-            </li>
-            <li class="nav-item">
-              <Link class="nav-link active" aria-current="page" to="/Login">
-                login
+              <Link class="nav-link active" aria-current="page" to="/Customerlogin">
+                Customer login
               </Link>
             </li>
           </ul>
