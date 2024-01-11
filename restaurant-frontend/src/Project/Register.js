@@ -47,7 +47,7 @@ function Register() {
         style={{ width: "28rem", marginTop: "3rem", backgroundColor: "orange" }}
       >
         <form>
-          <h2 class="text-center mt-4 mb-3">Register Form</h2>
+          <h2 class="text-center mt-4 mb-3">Staff Register Form</h2>
           <div class="d-flex p-2">
             <label class="form-label mt-2 w-50" for="fname">First Name:</label>
             <input

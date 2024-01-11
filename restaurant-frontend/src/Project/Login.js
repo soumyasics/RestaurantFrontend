@@ -32,7 +32,7 @@ function Login() {
     <div >
     <form >
         <div class="form-control mx-auto d-block " style={{width:"21rem",marginTop:"7rem",backgroundColor:"skyblue"}}>
-        <div class="p-2 w-100" > <h2 class="text-center mt-3 mb-3" >Login Form</h2></div>
+        <div class="p-2 w-100" > <h2 class="text-center mt-3 mb-3" >Staff Login Form</h2></div>
         <div class="d-flex p-2" >
             <label class="form-label mt-2" style={{width:"5rem"}}>Username: </label>
             <input class="form-control " style={{width:"13rem"}} placeholder='Enter email' type='email' onChange={Changethename} name='email'></input>
