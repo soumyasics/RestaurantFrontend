@@ -38,6 +38,11 @@ function Nav() {
                 Forget Password
               </Link>
             </li>
+            <li class="nav-item">
+              <Link class="nav-link active" aria-current="page" to="/Customerlogin">
+                Customer login
+              </Link>
+            </li>
           </ul>
         </div>
       </nav>
