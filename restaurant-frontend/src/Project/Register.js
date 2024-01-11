@@ -18,6 +18,7 @@ function Register() {
 
   const handleSubmit = (a) => {
     a.preventDefault();
+    if(data.password===data.confirmpassword){
     console.log(data);
     axios
       .post("http://localhost:3000/userregistration", data)
@@ -33,6 +34,10 @@ function Register() {
       .catch((err) => {
        console.log(err);
       });
+    }
+    else{
+      alert("Password and Confirm password must be same");
+    }
   };
 
   return (
@@ -44,8 +49,9 @@ function Register() {
         <form>
           <h2 class="text-center mt-4 mb-3">Register Form</h2>
           <div class="d-flex p-2">
-            <label class="form-label mt-2 w-50">First Name:</label>
+            <label class="form-label mt-2 w-50" for="fname">First Name:</label>
             <input
+              id="fname"
               class="form-control "
               style={{ width: "20rem" }}
               type="text"
@@ -56,8 +62,9 @@ function Register() {
             ></input>
           </div>
           <div class="d-flex p-2">
-            <label class="form-label mt-2 w-50">Last Name:</label>
+            <label class="form-label mt-2 w-50" for="lname">Last Name:</label>
             <input
+              id="lname"
               class="form-control "
               style={{ width: "20rem" }}
               type="text"
@@ -80,8 +87,9 @@ function Register() {
             ></input>
           </div>
           <div class="d-flex p-2">
-            <label class="form-label mt-2 w-50">Email:</label>
+            <label class="form-label mt-2 w-50" for="email">Email:</label>
             <input
+              id="email"
               class="form-control"
               style={{ width: "20rem" }}
               type="email"
@@ -92,8 +100,9 @@ function Register() {
             ></input>
           </div>
           <div class="d-flex p-2">
-            <label class="form-label mt-2 w-50">Password:</label>
+            <label class="form-label mt-2 w-50" for="password">Password:</label>
             <input
+              id="password"
               class="form-control"
               style={{ width: "20rem" }}
               type="password"
@@ -104,8 +113,9 @@ function Register() {
             ></input>
           </div>
           <div class="d-flex p-2">
-            <label class="form-label mt-2 w-50">Confirm Password:</label>
+            <label class="form-label mt-2 w-50" for="confirmpassword">Confirm Password:</label>
             <input
+              id="confirmpassword"
               class="form-control"
               style={{ width: "20rem" }}
               type="password"
@@ -116,8 +126,9 @@ function Register() {
             ></input>
           </div>
           <div class="d-flex p-2">
-            <label class="form-label mt-2 w-50">Contact No.:</label>
+            <label class="form-label mt-2 w-50" for="contact">Contact No.:</label>
             <input
+              id="contact"
               class="form-control"
               style={{ width: "20rem" }}
               type="tel"
