@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-function Customerlogin() {
+function Stafflogin() {
   const [data, setData] = useState({
     email: "",
     password: "",
   });
 
-  const Changethename = (a) => {
+  const handleChange = (a) => {
     setData({ ...data, [a.target.name]: a.target.value });
   };
   const handleSubmit = (a) => {
     a.preventDefault();
     console.log(data);
     axios
-      .post("http://localhost:3500/userlogin", data)
+      .post("http://localhost:3500/stafflogin", data)
       .then((res) => {
         console.log(res);
         if (res.data.status === 200) {
@@ -40,7 +40,7 @@ function Customerlogin() {
         >
           <div class="p-2 w-100">
             {" "}
-            <h2 class="text-center mt-3 mb-3">Customer Login</h2>
+            <h2 class="text-center mt-3 mb-3">Staff Login</h2>
           </div>
           <div class="d-flex p-2">
             <label class="form-label mt-2" style={{ width: "5rem" }}>
@@ -51,7 +51,7 @@ function Customerlogin() {
               style={{ width: "13rem" }}
               placeholder="Enter email"
               type="email"
-              onChange={Changethename}
+              onChange={handleChange}
               name="email"
             ></input>
           </div>
@@ -65,7 +65,7 @@ function Customerlogin() {
               placeholder="Enter Password"
               type="password"
               name="password"
-              onChange={Changethename}
+              onChange={handleChange}
             ></input>
           </div>
           <div class="text-center mt-3 mb-3">
@@ -74,10 +74,7 @@ function Customerlogin() {
             </button>
           </div>
           <div class="text-center mt-3 mb-3">
-            <a
-              href="/Forgetpassword"
-              style={{ textDecoration: "none", color: "red" }}
-            >
+            <a href="/staffpassword" style={{ textDecoration: "none", color: "red" }}>
               Forget password
             </a>
           </div>
@@ -87,4 +84,4 @@ function Customerlogin() {
   );
 }
 
-export default Customerlogin;
+export default Stafflogin;
