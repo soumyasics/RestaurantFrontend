@@ -1,7 +1,7 @@
 import React from "react";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "bootstrap/dist/css/bootstrap.min.css";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 function Nav() {
   return (
@@ -9,7 +9,7 @@ function Nav() {
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
-            My page
+            Restaurant Page
           </a>
           <button
             class="navbar-toggler"
@@ -22,21 +22,68 @@ function Nav() {
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <ul class="nav justify-content-end">
-          <li class="nav-item">
-              <Link class="nav-link active" aria-current="page" to="/Forgetpassword">
+          <ul class="nav justify-content-end mx-5">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Staff
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                <Link class="dropdown-item" to="/Staffregister">
+                New Staff
+              </Link>
+                </li>
+                <li>
+                <Link class="dropdown-item" to="/stafflogin">
+                Staff login
+              </Link>
+                </li>
+                <li>
+                <Link
+                class="dropdown-item"
+                to="/staffpassword"
+              >
                 Forget Password
               </Link>
+                </li>
+              </ul>
             </li>
-            <li class="nav-item">
-              <Link class="nav-link active" aria-current="page" to="/Register">
-                Register
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Customer
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                <Link class="dropdown-item" to="/Customerregister">
+                New Customer
               </Link>
-            </li>
-            <li class="nav-item">
-              <Link class="nav-link active" aria-current="page" to="/Stafflogin">
-                login
+                </li>
+                <li>
+                <Link class="dropdown-item" to="/Customerlogin">
+                Customer login
               </Link>
+                </li>
+                <li>
+                <Link
+                class="dropdown-item"
+                to="/Forgetpassword"
+              >
+                Forget Password
+              </Link>
+                </li>
+              </ul>
             </li>
           </ul>
         </div>

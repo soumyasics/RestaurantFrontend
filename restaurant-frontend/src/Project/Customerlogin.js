@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-function Stafflogin() {
+function Customerlogin() {
   const [data, setData] = useState({
     email: "",
     password: "",
   });
 
-  const handleChange = (a) => {
+  const Changethename = (a) => {
     setData({ ...data, [a.target.name]: a.target.value });
   };
   const handleSubmit = (a) => {
     a.preventDefault();
     console.log(data);
     axios
-      .post("http://localhost:3500/stafflogin", data)
+      .post("http://localhost:3500/userlogin", data)
       .then((res) => {
         console.log(res);
         if (res.data.status === 200) {
@@ -40,7 +40,7 @@ function Stafflogin() {
         >
           <div class="p-2 w-100">
             {" "}
-            <h2 class="text-center mt-3 mb-3">Staff Login</h2>
+            <h2 class="text-center mt-3 mb-3">Customer Login</h2>
           </div>
           <div class="d-flex p-2">
             <label class="form-label mt-2" style={{ width: "5rem" }}>
@@ -51,7 +51,7 @@ function Stafflogin() {
               style={{ width: "13rem" }}
               placeholder="Enter email"
               type="email"
-              onChange={handleChange}
+              onChange={Changethename}
               name="email"
             ></input>
           </div>
@@ -65,7 +65,7 @@ function Stafflogin() {
               placeholder="Enter Password"
               type="password"
               name="password"
-              onChange={handleChange}
+              onChange={Changethename}
             ></input>
           </div>
           <div class="text-center mt-3 mb-3">
@@ -74,7 +74,10 @@ function Stafflogin() {
             </button>
           </div>
           <div class="text-center mt-3 mb-3">
-            <a href="/staffpassword" style={{ textDecoration: "none", color: "red" }}>
+            <a
+              href="/Forgetpassword"
+              style={{ textDecoration: "none", color: "red" }}
+            >
               Forget password
             </a>
           </div>
@@ -84,4 +87,4 @@ function Stafflogin() {
   );
 }
 
-export default Stafflogin;
+export default Customerlogin;
