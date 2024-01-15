@@ -10,6 +10,8 @@ import Customerregister from "./Project/Customerregister";
 import Staffregister from "./Project/Staffregister";
 import Stafflogin from "./Project/Stafflogin";
 import Staffpassword from "./Project/Staffpassword";
+import Addfood from "./Project/Addfood";
+import Viewfood from "./Project/Viewfood";
 
 
 function App() {
@@ -26,6 +28,8 @@ function App() {
       <Route exact path="/Staffregister" element={<Staffregister/>}/>
       <Route exact path="/stafflogin" element={<Stafflogin/>}/>
       <Route exact path="/staffpassword" element={<Staffpassword/>}/>
+      <Route exact path="/addfood" element={<Addfood/>}/>
+      <Route exact path="/viewfood" element={<Viewfood/>}/>
       </Routes>
       </BrowserRouter>
     </div>
