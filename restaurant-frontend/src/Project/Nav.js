@@ -34,7 +34,7 @@ function Nav() {
               </Link>
             </li>
             <li class="nav-item">
-              <Link class="nav-link active" aria-current="page" to="/Login">
+              <Link class="nav-link active" aria-current="page" to="/Stafflogin">
                 login
               </Link>
             </li>

@@ -143,4 +143,3 @@ function Register() {
 }
 
 export default Register;
->>>>>>> 7dc0edd235223b0e9e8acb729db9e9a89f2ccb0a
