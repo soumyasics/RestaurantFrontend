@@ -23,6 +23,37 @@ function Nav() {
             <span class="navbar-toggler-icon"></span>
           </button>
           <ul class="nav justify-content-end mx-5">
+          <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Menu item
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                <Link class="dropdown-item" to="/addfood">
+                Add food
+              </Link>
+                </li>
+                <li>
+                <Link class="dropdown-item" to="/viewfood">
+                Viewfood
+              </Link>
+                </li>
+                <li>
+                <Link
+                class="dropdown-item"
+                to="/Viewfoodforcustomer"
+              >
+                Viewfoodforcustomer
+              </Link>
+                </li>
+              </ul>
+            </li>
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"

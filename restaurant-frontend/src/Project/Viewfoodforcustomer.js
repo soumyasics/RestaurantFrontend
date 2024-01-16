@@ -28,7 +28,10 @@ function Viewfood() {
               <h4 class="card-title">{x.foodname}</h4>
                 <h5>Price: {'\u20B9'}{x.price}</h5>
                 <Link class="btn btn-primary" to="">
-                Buy now
+                Order
+              </Link>
+              <Link class="btn btn-primary" style={{margin:20}}to="">
+                Add to cart
               </Link>
               </div>
             </div><br></br>

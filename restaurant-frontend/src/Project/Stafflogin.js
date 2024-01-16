@@ -14,7 +14,7 @@ function Stafflogin() {
     a.preventDefault();
     console.log(data);
     axios
-      .post("http://localhost:3500/stafflogin", data)
+      .post("http://localhost:3500/stafflogin", data,)
       .then((res) => {
         console.log(res);
         if (res.data.status === 200) {
