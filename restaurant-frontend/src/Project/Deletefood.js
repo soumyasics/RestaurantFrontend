@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import {Link} from 'react-router-dom'
 
-function Viewfood() {
-  const [state, setState] = useState([]);
+function Deletefood() {
+    const [state, setState] = useState([]);
   const fetchFood =  async() => {
     const response = await axios.get(
       "http://localhost:3500/viewfood"
-    )
+    );
     console.log(response.data.result);
     setState(response.data.result);
   };
@@ -15,6 +14,22 @@ function Viewfood() {
     fetchFood();
   }, []);
 
+  const handleClick = (a) => {
+    axios.post(
+        "http://localhost:3500/deletefood"
+      )
+    .then((res)=>{
+        console.log(res);
+        if (res.data.status === 200) {
+            window.location.reload(false)
+          } else {
+            console.log(res.data.msg);
+          }
+    })
+    .catch((err) => {
+        console.log(err);
+      });
+  }
 
   return (
     <div class="m-4">
@@ -28,9 +43,9 @@ function Viewfood() {
             <div>
               <h4 class="mt-3">{x.foodname}</h4>
                 <h5>Price: {'\u20B9'}{x.price}</h5>
-                <Link class="btn btn-primary" to="">
-                Buy now
-              </Link>
+                <button class="btn btn-primary" onClick = {handleClick}>
+                Delete item
+              </button>
               </div>
             </div><br></br>
           </li>
@@ -38,7 +53,7 @@ function Viewfood() {
         ))}
       </ul>
     </div>
-  );
+  )
 }
 
-export default Viewfood
+export default Deletefood

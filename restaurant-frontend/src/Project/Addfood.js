@@ -10,14 +10,24 @@ function Addfood() {
   });
 
   const handleChange = (a) => {
-    setData({ ...data, [a.target.name]: a.target.value });
+    if (a.target.name === "image") {
+      const file = a.target.files[0];
+      setData({ ...data, image: file });
+    }
+    else{
+      setData({ ...data, [a.target.name]: a.target.value });
+    }
   };
 
   const handleSubmit = (a) => {
     a.preventDefault();
     console.log(data);
     axios
-      .post("http://localhost:3500/addfood", data)
+      .post("http://localhost:3500/addfood", data,{
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
       .then((res) => {
         console.log(res);
         if (res.data.status === 200) {

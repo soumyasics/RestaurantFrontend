@@ -19,6 +19,7 @@ function Stafflogin() {
         console.log(res);
         if (res.data.status === 200) {
           alert(res.data.msg);
+          localStorage.setItem("staffId",res.data.result._id)
         } else {
           alert(res.data.msg);
         }
