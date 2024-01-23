@@ -42,18 +42,18 @@ function Customerregister() {
       return (
         <div>
           <div
-            class="form-control d-flex mx-auto"
+            className="form-control d-flex mx-auto"
             style={{ width: "28rem", marginTop: "1rem", backgroundColor: "orange" }}
           >
             <form>
-              <h2 class="text-center mt-4 mb-3">Customer Registration</h2>
-              <div class="d-flex p-2">
-                <label class="form-label mt-2 w-50" for="fname">
+              <h2 className="text-center mt-4 mb-3">Customer Registration</h2>
+              <div className="d-flex p-2">
+                <label className="form-label mt-2 w-50" htmlFor="fname">
                   First Name:
                 </label>
                 <input
                   id="fname"
-                  class="form-control "
+                  className="form-control "
                   style={{ width: "20rem" }}
                   type="text"
                   name="fname"
@@ -62,13 +62,13 @@ function Customerregister() {
                   onChange={handleChange}
                 ></input>
               </div>
-              <div class="d-flex p-2">
-                <label class="form-label mt-2 w-50" for="lname">
+              <div className="d-flex p-2">
+                <label className="form-label mt-2 w-50" htmlFor="lname">
                   Last Name:
                 </label>
                 <input
                   id="lname"
-                  class="form-control "
+                  className="form-control "
                   style={{ width: "20rem" }}
                   type="text"
                   name="lname"
@@ -77,10 +77,10 @@ function Customerregister() {
                   onChange={handleChange}
                 ></input>
               </div>
-              <div class="d-flex p-2">
-                <label class="form-label mt-2 w-50">D.O.B:</label>
+              <div className="d-flex p-2">
+                <label className="form-label mt-2 w-50">D.O.B:</label>
                 <input
-                  class="form-control "
+                  className="form-control "
                   style={{ width: "20rem" }}
                   type="date"
                   name="dob"
@@ -89,8 +89,8 @@ function Customerregister() {
                   onChange={handleChange}
                 ></input>
               </div>
-              <div class="d-flex p-2">
-                <label class="form-label mt-2 w-50">Gender:</label>
+              <div className="d-flex p-2">
+                <label className="form-label mt-2 w-50">Gender:</label>
                 <div style={{ width: "20rem" }}>
                   <input
                     id="male"
@@ -99,10 +99,10 @@ function Customerregister() {
                     value="male"
                     onChange={handleChange}
                     required
-                    class="p-0 mx-2 form-check-input"
+                    className="p-0 mx-2 form-check-input"
                     style={{ marginTop:"0.8rem" }}
                   ></input>
-                  <label class="form-label mt-2 " for="male">Male</label>
+                  <label className="form-label mt-2 " htmlFor="male">Male</label>
                   <input
                     id="female"
                     type="radio"
@@ -110,19 +110,19 @@ function Customerregister() {
                     value="female"
                     onChange={handleChange}
                     required
-                    class="p-0 mx-2 form-check-input"
+                    className="p-0 mx-2 form-check-input"
                     style={{ marginTop:"0.8rem" }}
                   ></input>
-                  <label class="form-label mt-2" for="female">Female</label>
+                  <label className="form-label mt-2" htmlFor="female">Female</label>
                 </div>
               </div>
-              <div class="d-flex p-2">
-                <label class="form-label mt-2 w-50" for="email">
+              <div className="d-flex p-2">
+                <label className="form-label mt-2 w-50" htmlFor="email">
                   Email:
                 </label>
                 <input
                   id="email"
-                  class="form-control"
+                  className="form-control"
                   style={{ width: "20rem" }}
                   type="email"
                   name="email"
@@ -131,13 +131,13 @@ function Customerregister() {
                   onChange={handleChange}
                 ></input>
               </div>
-              <div class="d-flex p-2">
-                <label class="form-label mt-2 w-50" for="password">
+              <div className="d-flex p-2">
+                <label className="form-label mt-2 w-50" htmlFor="password">
                   Password:
                 </label>
                 <input
                   id="password"
-                  class="form-control"
+                  className="form-control"
                   style={{ width: "20rem" }}
                   type="password"
                   name="password"
@@ -146,13 +146,13 @@ function Customerregister() {
                   onChange={handleChange}
                 ></input>
               </div>
-              <div class="d-flex p-2">
-                <label class="form-label mt-2 w-50" for="confirmpassword">
+              <div className="d-flex p-2">
+                <label className="form-label mt-2 w-50" htmlFor="confirmpassword">
                   Confirm Password:
                 </label>
                 <input
                   id="confirmpassword"
-                  class="form-control"
+                  className="form-control"
                   style={{ width: "20rem" }}
                   type="password"
                   name="confirmpassword"
@@ -161,13 +161,13 @@ function Customerregister() {
                   onChange={handleChange}
                 ></input>
               </div>
-              <div class="d-flex p-2">
-                <label class="form-label mt-2 w-50" for="contact">
+              <div className="d-flex p-2">
+                <label className="form-label mt-2 w-50" htmlFor="contact">
                   Contact No.:
                 </label>
                 <input
                   id="contact"
-                  class="form-control"
+                  className="form-control"
                   style={{ width: "20rem" }}
                   type="tel"
                   name="contactno"
@@ -178,8 +178,8 @@ function Customerregister() {
                   onChange={handleChange}
                 ></input>
               </div>
-              <div class="text-center mt-3 mb-3">
-                <button class="w-25 btn btn-success" onClick={handleSubmit}>
+              <div className="text-center mt-3 mb-3">
+                <button className="w-25 btn btn-success" onClick={handleSubmit}>
                   Submit
                 </button>
               </div>

@@ -32,24 +32,22 @@ function Deletefood() {
   }
 
   return (
-    <div class="m-4">
-      <ul style={{ listStyleType: 'none' }} class="p-3">
+    <div className="m-4">
+      <ul style={{ listStyleType: 'none' }} className="p-3">
         {state.map((x) => (
-          <div class="p-4 d-inline-flex ">
-          <li key={x.id} class="m-3">
-            <div class="shadow-lg p-3 bg-body-tertiary rounded" >
+          <li key={x._id} className="m-3 p-4 d-inline-flex">
+            <div className="shadow-lg p-3 bg-body-tertiary rounded" >
             <img src={`http://localhost:3500/${x.image}`
-          } class="img-fluid" alt="..." style={{width: "15rem",height:"15rem"}}/><br></br>
+          } className="img-fluid" alt="..." style={{width: "15rem",height:"15rem"}}/>
             <div>
-              <h4 class="mt-3">{x.foodname}</h4>
+              <h4 className="mt-3">{x.foodname}</h4>
                 <h5>Price: {'\u20B9'}{x.price}</h5>
-                <button class="btn btn-primary" onClick = {handleClick}>
+                <button className="btn btn-primary" onClick = {handleClick}>
                 Delete item
               </button>
               </div>
-            </div><br></br>
+            </div>
           </li>
-          </div>
         ))}
       </ul>
     </div>

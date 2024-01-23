@@ -5,14 +5,14 @@ import { Link } from "react-router-dom";
 
 function Nav() {
   return (
-    <div class="sticky-top">
-      <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-lg p-3 mb-5">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
+    <div className="sticky-top">
+      <nav className="navbar navbar-expand-lg bg-body-tertiary shadow-lg p-3 mb-5">
+        <div className="container-fluid">
+          <a className="navbar-brand" href="#">
             Restaurant Page
           </a>
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
@@ -20,12 +20,12 @@ function Nav() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <ul class="nav justify-content-end mx-5">
-          <li class="nav-item dropdown">
+          <ul className="nav justify-content-end mx-5">
+          <li className="nav-item dropdown">
               <a
-                class="nav-link dropdown-toggle"
+                className="nav-link dropdown-toggle"
                 href="#"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -33,30 +33,38 @@ function Nav() {
               >
                 Menu item
               </a>
-              <ul class="dropdown-menu">
+              <ul className="dropdown-menu">
                 <li>
-                <Link class="dropdown-item" to="/addfood">
+                <Link className="dropdown-item" to="/addfood">
                 Add food
               </Link>
                 </li>
                 <li>
-                <Link class="dropdown-item" to="/viewfood">
+                <Link className="dropdown-item" to="/viewfood">
                 Viewfood
               </Link>
                 </li>
                 <li>
                 <Link
-                class="dropdown-item"
+                className="dropdown-item"
                 to="/deletefood"
               >
                 Deletefood
               </Link>
                 </li>
+                {/* <li>
+                <Link
+                className="dropdown-item"
+                to="/editfood"
+              >
+                Edit food
+              </Link>
+                </li> */}
               </ul>
             </li>
-            <li class="nav-item dropdown">
+            <li className="nav-item dropdown">
               <a
-                class="nav-link dropdown-toggle"
+                className="nav-link dropdown-toggle"
                 href="#"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -64,20 +72,20 @@ function Nav() {
               >
                 Staff
               </a>
-              <ul class="dropdown-menu">
+              <ul className="dropdown-menu">
                 <li>
-                <Link class="dropdown-item" to="/Staffregister">
+                <Link className="dropdown-item" to="/Staffregister">
                 New Staff
               </Link>
                 </li>
                 <li>
-                <Link class="dropdown-item" to="/stafflogin">
+                <Link className="dropdown-item" to="/stafflogin">
                 Staff login
               </Link>
                 </li>
                 <li>
                 <Link
-                class="dropdown-item"
+                className="dropdown-item"
                 to="/staffpassword"
               >
                 Forget Password
@@ -85,9 +93,9 @@ function Nav() {
                 </li>
               </ul>
             </li>
-            <li class="nav-item dropdown">
+            <li className="nav-item dropdown">
               <a
-                class="nav-link dropdown-toggle"
+                className="nav-link dropdown-toggle"
                 href="#"
                 role="button"
                 data-bs-toggle="dropdown"
@@ -95,26 +103,29 @@ function Nav() {
               >
                 Customer
               </a>
-              <ul class="dropdown-menu">
+              <ul className="dropdown-menu">
                 <li>
-                <Link class="dropdown-item" to="/Customerregister">
+                <Link className="dropdown-item" to="/Customerregister">
                 New Customer
               </Link>
                 </li>
                 <li>
-                <Link class="dropdown-item" to="/Customerlogin">
+                <Link className="dropdown-item" to="/Customerlogin">
                 Customer login
               </Link>
                 </li>
                 <li>
                 <Link
-                class="dropdown-item"
+                className="dropdown-item"
                 to="/Forgetpassword"
               >
                 Forget Password
               </Link>
                 </li>
               </ul>
+            </li>
+            <li>
+            <Link className="nav-link active" to="/addcart">Cart</Link>
             </li>
           </ul>
         </div>

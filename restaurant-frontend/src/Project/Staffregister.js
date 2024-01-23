@@ -44,18 +44,18 @@ function Staffregister() {
   return (
     <div>
       <div
-        class="form-control d-flex mx-auto"
+        className="form-control d-flex mx-auto"
         style={{ width: "28rem", backgroundColor: "orange" }}
       >
         <form>
-          <h2 class="text-center mt-4 mb-3">Staff Registration</h2>
-          <div class="d-flex p-2">
-            <label class="form-label mt-2 w-50" for="fname">
+          <h2 className="text-center mt-4 mb-3">Staff Registration</h2>
+          <div className="d-flex p-2">
+            <label className="form-label mt-2 w-50" htmlFor="fname">
               First Name:
             </label>
             <input
               id="fname"
-              class="form-control "
+              className="form-control "
               style={{ width: "20rem" }}
               type="text"
               name="fname"
@@ -64,13 +64,13 @@ function Staffregister() {
               onChange={handleChange}
             ></input>
           </div>
-          <div class="d-flex p-2">
-            <label class="form-label mt-2 w-50" for="lname">
+          <div className="d-flex p-2">
+            <label className="form-label mt-2 w-50" htmlFor="lname">
               Last Name:
             </label>
             <input
               id="lname"
-              class="form-control "
+              className="form-control "
               style={{ width: "20rem" }}
               type="text"
               name="lname"
@@ -79,10 +79,10 @@ function Staffregister() {
               onChange={handleChange}
             ></input>
           </div>
-          <div class="d-flex p-2">
-            <label class="form-label mt-2 w-50">D.O.B:</label>
+          <div className="d-flex p-2">
+            <label className="form-label mt-2 w-50">D.O.B:</label>
             <input
-              class="form-control "
+              className="form-control "
               style={{ width: "20rem" }}
               type="date"
               name="dob"
@@ -91,8 +91,8 @@ function Staffregister() {
               onChange={handleChange}
             ></input>
           </div>
-          <div class="d-flex p-2">
-            <label class="form-label mt-2 w-50">Gender:</label>
+          <div className="d-flex p-2">
+            <label className="form-label mt-2 w-50">Gender:</label>
             <div style={{ width: "20rem" }}>
               <input
                 id="male"
@@ -101,10 +101,10 @@ function Staffregister() {
                 value="male"
                 onChange={handleChange}
                 required
-                class="p-0 mx-2 form-check-input"
+                className="p-0 mx-2 form-check-input"
                 style={{ marginTop: "0.8rem" }}
               ></input>
-              <label class="form-label mt-2 " for="male">Male</label>
+              <label className="form-label mt-2 " htmlFor="male">Male</label>
               <input
                 id="female"
                 type="radio"
@@ -112,19 +112,19 @@ function Staffregister() {
                 value="female"
                 onChange={handleChange}
                 required
-                class="p-0 mx-2 form-check-input"
+                className="p-0 mx-2 form-check-input"
                 style={{ marginTop: "0.8rem" }}
               ></input>
-              <label class="form-label mt-2" for="female">Female</label>
+              <label className="form-label mt-2" htmlFor="female">Female</label>
             </div>
           </div>
-          <div class="d-flex p-2">
-            <label class="form-label mt-2 w-50" for="email">
+          <div className="d-flex p-2">
+            <label className="form-label mt-2 w-50" htmlFor="email">
               Email:
             </label>
             <input
               id="email"
-              class="form-control"
+              className="form-control"
               style={{ width: "20rem" }}
               type="email"
               name="email"
@@ -133,13 +133,13 @@ function Staffregister() {
               onChange={handleChange}
             ></input>
           </div>
-          <div class="d-flex p-2">
-            <label class="form-label mt-2 w-50" for="password">
+          <div className="d-flex p-2">
+            <label className="form-label mt-2 w-50" htmlFor="password">
               Password:
             </label>
             <input
               id="password"
-              class="form-control"
+              className="form-control"
               style={{ width: "20rem" }}
               type="password"
               name="password"
@@ -148,13 +148,13 @@ function Staffregister() {
               onChange={handleChange}
             ></input>
           </div>
-          <div class="d-flex p-2">
-            <label class="form-label mt-2 w-50" for="confirmpassword">
+          <div className="d-flex p-2">
+            <label className="form-label mt-2 w-50" htmlFor="confirmpassword">
               Confirm Password:
             </label>
             <input
               id="confirmpassword"
-              class="form-control"
+              className="form-control"
               style={{ width: "20rem" }}
               type="password"
               name="confirmpassword"
@@ -163,18 +163,18 @@ function Staffregister() {
               onChange={handleChange}
             ></input>
           </div>
-          <div class="d-flex p-2">
-            <label class="form-label mt-2 w-50" for="salary">
+          <div className="d-flex p-2">
+            <label className="form-label mt-2 w-50" htmlFor="salary">
               Salary:
             </label>
-            <div class="input-group" style={{ width: "20rem" }}>
-              <span class="input-group-text">
+            <div className="input-group" style={{ width: "20rem" }}>
+              <span className="input-group-text">
                 Rs.
               </span>
               <input
                 type="tel"
                 id="salary"
-                class="form-control"
+                className="form-control"
                 placeholder="Enter Salary"
                 name="salary"
                 required
@@ -182,13 +182,13 @@ function Staffregister() {
               />
             </div>
           </div>
-          <div class="d-flex p-2">
-            <label class="form-label mt-2 w-50" for="contact">
+          <div className="d-flex p-2">
+            <label className="form-label mt-2 w-50" htmlFor="contact">
               Contact No.:
             </label>
             <input
               id="contact"
-              class="form-control"
+              className="form-control"
               style={{ width: "20rem" }}
               type="tel"
               name="contactno"
@@ -199,12 +199,12 @@ function Staffregister() {
               onChange={handleChange}
             ></input>
           </div>
-          <div class="d-flex p-2">
-            <label class="form-label mt-2 w-50" for="designation">
+          <div className="d-flex p-2">
+            <label className="form-label mt-2 w-50" htmlFor="designation">
                 Designation:
             </label>
             <textarea id="designation"
-              class="form-control"
+              className="form-control"
               style={{ width: "20rem" }}
               type="text"
               name="designation"
@@ -212,8 +212,8 @@ function Staffregister() {
               required
               onChange={handleChange}></textarea>
           </div>
-          <div class="text-center mt-3 mb-3">
-            <button class="w-25 btn btn-success" onClick={handleSubmit}>
+          <div className="text-center mt-3 mb-3">
+            <button className="w-25 btn btn-success" onClick={handleSubmit}>
               Submit
             </button>
           </div>

@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import {Link} from 'react-router-dom'
 
 function Viewfood() {
   const [state, setState] = useState([]);
-  const fetchFood =  async() => {
-    const response = await axios.get(
-      "http://localhost:3500/viewfood"
-    )
+  let custid=localStorage.getItem('custId')
+  const [cartdata,setCartdata] = useState({
+    userid:custid,
+    count:'1'
+  })
+  console.log(cartdata)
+  const fetchFood = async () => {
+    const response = await axios.get("http://localhost:3500/viewfood");
     console.log(response.data.result);
     setState(response.data.result);
   };
@@ -15,30 +18,66 @@ function Viewfood() {
     fetchFood();
   }, []);
 
+  const handleClick = (id) => {
+    console.log(id)
+    axios.post(`http://localhost:3500/addcart/${id}`,cartdata)
+    .then((res) => {
+      console.log(res);
+      if (res.data.status === 200) {
+        alert(res.data.msg);
+      } else {
+        alert(res.data.msg);
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  }
 
   return (
-    <div class="m-4">
-      <ul style={{ listStyleType: 'none' }} class="p-3">
-        {state.map((x) => (
-          <div class="p-4 d-inline-flex ">
-          <li key={x.id} class="m-3">
-            <div class="shadow-lg p-3 bg-body-tertiary rounded" >
-            <img src={`http://localhost:3500/${x.image}`
-          } class="img-fluid" alt="..." style={{width: "15rem",height:"15rem"}}/><br></br>
-            <div>
-              <h4 class="mt-3">{x.foodname}</h4>
-                <h5>Price: {'\u20B9'}{x.price}</h5>
-                <Link class="btn btn-primary" to="">
-                Buy now
-              </Link>
+    <div className="m-4">
+      <ul style={{ listStyleType: "none" }} className="p-3">
+        {state.map((x) => ( 
+            <li key={x._id} className="m-3 p-4 d-inline-flex ">
+              <div className="shadow-lg p-3 bg-body-tertiary rounded">
+                <img
+                  src={`http://localhost:3500/${x.image}`}
+                  className="img-fluid"
+                  alt="..."
+                  style={{ width: "15rem", height: "15rem" }}
+                />
+                <div>
+                  <h4 className="mt-2">{x.foodname}</h4>
+                  <h5 className="mt-2">
+                    Price: {"\u20B9"}
+                    {x.price}
+                  </h5>
+                  <div>
+                    <label className="form-label me-4">Quantity:</label>
+                    <select name="count" onChange={(a)=>{setCartdata({ ...cartdata, [a.target.name]: a.target.value });}
+                  }>
+                      <option value={1}>1</option>
+                      <option value={2}>2</option>
+                      <option value={3}>3</option>
+                      <option value={4}>4</option>
+                      <option value={5}>5</option>
+                      <option value={6}>6</option>
+                      <option value={7}>7</option>
+                      <option value={8}>8</option>
+                      <option value={9}>9</option>
+                      <option value={10}>10</option>
+                    </select>
+                  </div>
+                  <button className="btn btn-primary" onClick={()=>{handleClick(x._id)}}>
+                    Add cart
+                  </button>
+                </div>
               </div>
-            </div><br></br>
-          </li>
-          </div>
+            </li> 
         ))}
       </ul>
     </div>
   );
 }
 
-export default Viewfood
+export default Viewfood;
