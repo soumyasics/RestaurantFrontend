@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function Nav() {
   return (
     <div class="sticky-top">
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-lg p-3 mb-5">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
             Restaurant Page
@@ -42,14 +42,22 @@ function Nav() {
                 <li>
                 <Link class="dropdown-item" to="/viewfood">
                 Viewfood
+                </Link>
+                </li>
+                <li>
+                <Link
+                class="dropdown-item"
+                to="/viewfoodforcustomer"
+              >
+                Viewfoodforcustomer
               </Link>
                 </li>
                 <li>
                 <Link
                 class="dropdown-item"
-                to="/Viewfoodforcustomer"
+                to="/deletefood"
               >
-                Viewfoodforcustomer
+                Deletefood
               </Link>
                 </li>
               </ul>
@@ -115,6 +123,10 @@ function Nav() {
               </Link>
                 </li>
               </ul>
+            </li>
+            <li>
+              <Link class="nav-link active" to="/addcart">AddCart</Link>
+              
             </li>
           </ul>
         </div>

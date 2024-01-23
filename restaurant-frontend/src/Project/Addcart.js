@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import {Link} from 'react-router-dom'
 
-function Viewfood() {
+function Addcart() {
   const [state, setState] = useState([]);
   const fetchFood =  async() => {
-    const response = await axios.get(
-      "http://localhost:3500/viewfood"
+    const response = await axios.post(
+      "http://localhost:3500/Addcart"
     )
     console.log(response.data.result);
     setState(response.data.result);
@@ -23,8 +23,7 @@ function Viewfood() {
           <div class="p-4 d-inline-flex ">
           <li key={x.id} class="m-3">
             <div class="shadow-lg p-3 bg-body-tertiary rounded" >
-            <img src={`http://localhost:3500/${x.image}`
-          } class="img-fluid" alt="..." style={{width: "15rem",height:"15rem"}}/><br></br>
+            
             <div>
               <h4 class="mt-3">{x.foodname}</h4>
                 <h5>Price: {'\u20B9'}{x.price}</h5>
@@ -44,4 +43,4 @@ function Viewfood() {
   );
 }
 
-export default Viewfood
+export default Addcart

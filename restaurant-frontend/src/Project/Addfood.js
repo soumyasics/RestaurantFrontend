@@ -15,8 +15,9 @@ function Addfood() {
       setData({ ...data, image: file });
     }
     else{
-    setData({ ...data, [a.target.name]: a.target.value });
-  };}
+      setData({ ...data, [a.target.name]: a.target.value });
+    }
+  };
 
   const handleSubmit = (a) => {
     a.preventDefault();
@@ -26,8 +27,7 @@ function Addfood() {
         headers: {
           "Content-Type": "multipart/form-data",
         },
-      }
-)
+      })
       .then((res) => {
         console.log(res);
         if (res.data.status === 200) {

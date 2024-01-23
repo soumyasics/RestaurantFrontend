@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import {Link} from 'react-router-dom'
 
-function Viewfood() {
+function Viewfoodforcustomer() {
   const [state, setState] = useState([]);
   const fetchFood =  async() => {
     const response = await axios.get(
@@ -16,31 +16,32 @@ function Viewfood() {
   }, []);
 
 
-  return (
-    <div>
-      <ul style={{ listStyleType: 'none' }} class="p-2 mt-0 ">
-        {state.map((x) => (
-          <div class="p-2 d-inline-flex">
-          <li key={x.id} class="mt-0 ">
-            <div class="card align-top" style={{width: "22rem",height:"39rem"}}>
-            <img src={`http://localhost:3500/${x.image}`} class="card-img-top ms-4 mt-3" alt={x.decripition} style={{width: "19rem",height:"23rem"}}/><br></br>
-            <div class="card-body">
-              <h4 class="card-title">{x.foodname}</h4>
-                <h5>Price: {'\u20B9'}{x.price}</h5>
-                <Link class="btn btn-primary" to="">
-                Order
-              </Link>
-              <Link class="btn btn-primary" style={{margin:20}}to="">
-                Add to cart
-              </Link>
-              </div>
-            </div><br></br>
-          </li>
+  return ( <div class="m-4">
+  <ul style={{ listStyleType: 'none' }} class="p-3">
+    {state.map((x) => (
+      <div class="p-4 d-inline-flex ">
+      <li key={x.id} class="m-3">
+        <div class="shadow-lg p-3 bg-body-tertiary rounded" >
+        <img src={`http://localhost:3500/${x.image}`
+      } class="img-fluid" alt="..." style={{width: "15rem",height:"15rem"}}/><br></br>
+        <div>
+          <h4 class="mt-3">{x.foodname}</h4>
+            <h5>Price: {'\u20B9'}{x.price}</h5>
+            <Link class="btn btn-primary" to="">
+            Buy now
+          </Link>
+          <Link class="btn btn-primary" style={{margin:20}}to="">
+            Add to cart
+          </Link>
           </div>
-        ))}
-      </ul>
-    </div>
-  );
+        </div><br></br>
+      </li>
+      </div>
+    ))}
+  </ul>
+</div>
+);
 }
 
-export default Viewfood
+
+export default Viewfoodforcustomer

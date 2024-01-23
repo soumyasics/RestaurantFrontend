@@ -12,7 +12,10 @@ import Stafflogin from "./Project/Stafflogin";
 import Staffpassword from "./Project/Staffpassword";
 import Addfood from "./Project/Addfood";
 import Viewfood from "./Project/Viewfood";
-import Viewfoodforcustomer from "./Project/Viewfoodforcustomer";
+import Viewfoodforcustomer from "./Project/Viewfoodforcustomer"
+import Deletefood from "./Project/Deletefood";
+import Addcart from "./Project/Addcart";
+
 
 
 function App() {
@@ -31,7 +34,9 @@ function App() {
       <Route exact path="/staffpassword" element={<Staffpassword/>}/>
       <Route exact path="/addfood" element={<Addfood/>}/>
       <Route exact path="/viewfood" element={<Viewfood/>}/>
-      <Route exact path="/Viewfoodforcustomer" element={<Viewfoodforcustomer/>}/>
+      <Route exact path="/viewfoodforcustomer" element={<Viewfoodforcustomer/>}/>
+      <Route exact path="/deletefood" element={<Deletefood/>}/>
+      <Route exact path="/addcart" element={<Addcart/>}/>
       </Routes>
       </BrowserRouter>
     </div>
