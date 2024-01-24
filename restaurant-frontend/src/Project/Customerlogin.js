@@ -32,23 +32,23 @@ function Customerlogin() {
     <div>
       <form>
         <div
-          class="form-control mx-auto d-block "
+          className="form-control mx-auto d-block "
           style={{
             width: "21rem",
             marginTop: "7rem",
             backgroundColor: "skyblue",
           }}
         >
-          <div class="p-2 w-100">
+          <div className="p-2 w-100">
             {" "}
-            <h2 class="text-center mt-3 mb-3">Customer Login</h2>
+            <h2 className="text-center mt-3 mb-3">Customer Login</h2>
           </div>
-          <div class="d-flex p-2">
-            <label class="form-label mt-2" style={{ width: "5rem" }}>
+          <div className="d-flex p-2">
+            <label className="form-label mt-2" style={{ width: "5rem" }}>
               Username:{" "}
             </label>
             <input
-              class="form-control "
+              className="form-control "
               style={{ width: "13rem" }}
               placeholder="Enter email"
               type="email"
@@ -56,12 +56,12 @@ function Customerlogin() {
               name="email"
             ></input>
           </div>
-          <div class="d-flex p-2">
-            <label class="form-label mt-2" style={{ width: "5rem" }}>
+          <div className="d-flex p-2">
+            <label className="form-label mt-2" style={{ width: "5rem" }}>
               Password:{" "}
             </label>
             <input
-              class="form-control "
+              className="form-control "
               style={{ width: "13rem" }}
               placeholder="Enter Password"
               type="password"
@@ -69,12 +69,12 @@ function Customerlogin() {
               onChange={Changethename}
             ></input>
           </div>
-          <div class="text-center mt-3 mb-3">
-            <button class="w-50 btn btn-primary" onClick={handleSubmit}>
+          <div className="text-center mt-3 mb-3">
+            <button className="w-50 btn btn-primary" onClick={handleSubmit}>
               Sign in
             </button>
           </div>
-          <div class="text-center mt-3 mb-3">
+          <div className="text-center mt-3 mb-3">
             <a
               href="/Forgetpassword"
               style={{ textDecoration: "none", color: "red" }}

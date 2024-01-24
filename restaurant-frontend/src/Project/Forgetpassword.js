@@ -37,12 +37,12 @@ function Forgetpassword() {
   return (
     <div>
       <form>
-      <div class="form-control mx-auto d-block " style={{width:"25rem",marginTop:"7rem",backgroundColor:"lightgreen"}}>
-      <div class="p-2 w-100" > <h2 class="text-center mt-3 mb-3" >Customer Reset Password</h2></div>
-        <div class="d-flex p-2" >
-          <label class="form-label mt-2" style={{width:"9rem"}}>Username:</label>
+      <div className="form-control mx-auto d-block " style={{width:"25rem",marginTop:"7rem",backgroundColor:"lightgreen"}}>
+      <div className="p-2 w-100" > <h2 className="text-center mt-3 mb-3" >Customer Reset Password</h2></div>
+        <div className="d-flex p-2" >
+          <label className="form-label mt-2" style={{width:"9rem"}}>Username:</label>
           <input
-            class="form-control " style={{width:"13rem"}}
+            className="form-control " style={{width:"13rem"}}
             name="email"
             placeholder="Enter Username"
             type="email"
@@ -50,10 +50,10 @@ function Forgetpassword() {
             required
           ></input>
         </div>
-        <div class="d-flex p-2" >
-          <label class="form-label mt-2" style={{width:"9rem"}}>Password:</label>
+        <div className="d-flex p-2" >
+          <label className="form-label mt-2" style={{width:"9rem"}}>Password:</label>
           <input
-            class="form-control " style={{width:"13rem"}}
+            className="form-control " style={{width:"13rem"}}
             name="password"
             placeholder="Enter Password"
             type="password"
@@ -61,10 +61,10 @@ function Forgetpassword() {
             required
           ></input>
         </div>
-        <div class="d-flex p-2" >
-          <label class="form-label mt-2" style={{width:"9rem"}}>Confirm Password:</label>
+        <div className="d-flex p-2" >
+          <label className="form-label mt-2" style={{width:"9rem"}}>Confirm Password:</label>
           <input
-            class="form-control " style={{width:"13rem"}}
+            className="form-control " style={{width:"13rem"}}
             name="confirmpassword"
             placeholder="Re-enter the Password"
             type="password"
@@ -72,8 +72,8 @@ function Forgetpassword() {
             required
           ></input>
         </div>
-        <div class="text-center mt-3 mb-3">
-          <button class="w-25 btn btn-danger" onClick={handleSubmit}>Submit</button>
+        <div className="text-center mt-3 mb-3">
+          <button className="w-25 btn btn-danger" onClick={handleSubmit}>Submit</button>
         </div>
         </div>
       </form>
