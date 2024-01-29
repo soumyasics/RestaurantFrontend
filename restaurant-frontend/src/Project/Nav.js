@@ -42,6 +42,7 @@ function Nav() {
                 <li>
                 <Link className="dropdown-item" to="/viewfood">
                 Viewfood
+
               </Link>
                 </li>
                 <li>
@@ -125,7 +126,7 @@ function Nav() {
               </ul>
             </li>
             <li>
-            <Link className="nav-link active" to="/addcart">Cart</Link>
+            <Link className="nav-link active" to="/viewcart">Cart</Link>
             </li>
           </ul>
         </div>
