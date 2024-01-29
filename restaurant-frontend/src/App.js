@@ -13,10 +13,11 @@ import Staffpassword from "./Project/Staffpassword";
 import Addfood from "./Project/Addfood";
 import Viewfood from "./Project/Viewfood";
 import Deletefood from "./Project/Deletefood";
-import Addcart from "./Project/Addcart";
+import Viewcart from "./Project/Viewcart";
 
 
 function App() {
+  let custid = localStorage.getItem("custId");
   return (
     <div>
       <BrowserRouter>
@@ -32,7 +33,7 @@ function App() {
       <Route exact path="/addfood" element={<Addfood/>}/>
       <Route exact path="/viewfood" element={<Viewfood/>}/>
       <Route exact path="/deletefood" element={<Deletefood/>}/>
-      <Route exact path="/addcart" element={<Addcart/>}/>
+      <Route exact path="/viewcart" element={<Viewcart/>}/>
       </Routes>
       </BrowserRouter>
     </div>
