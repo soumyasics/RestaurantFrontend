@@ -16,7 +16,7 @@ function Viewcart() {
     fetchCart();
   }, []);
 
-  const handleClick = () => {
+  const handleDelete = () => {
     axios
       .post("http://localhost:3500/deletecartitem")
       .then((res) => {
@@ -31,6 +31,21 @@ function Viewcart() {
         console.log(err);
       });
   };
+
+  const handleCheckout = () => {
+    axios.post("http://localhost:3500/addorder",{state:state})
+    .then((res) => {
+      console.log(res);
+      if (res.data.status === 200) {
+        alert(res.data.msg);
+      } else {
+        alert(res.data.msg);
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  }
 
   return (
     <div>
@@ -67,7 +82,7 @@ function Viewcart() {
                 </div>
               </div>
               <button
-                onClick={handleClick}
+                onClick={handleDelete}
                 style={{ height: "2.5rem" }}
                 className="mt-5 btn btn-danger"
               >
@@ -82,7 +97,7 @@ function Viewcart() {
             </span>
           </p>
           <div className="d-grid me-3 justify-content-md-end">
-            <button className="btn btn-success me-md-2">Check out</button>
+            <button className="btn btn-success me-md-2" onClick={handleCheckout}>Check out</button>
           </div>
         </ul>
       ) : (
