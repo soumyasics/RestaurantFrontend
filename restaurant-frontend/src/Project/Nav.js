@@ -4,6 +4,17 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 
 function Nav() {
+  let custid = localStorage.getItem('custId');
+  let custname = localStorage.getItem('fname')
+
+  console.log(custname)
+
+  const handleClick = () => {
+    custid=localStorage.removeItem('custId')
+    alert("You have logged out");
+    window.location.reload(false)
+  }
+  
   return (
     <div className="sticky-top">
       <nav className="navbar navbar-expand-lg bg-body-tertiary shadow-lg p-3 mb-5">
@@ -63,7 +74,26 @@ function Nav() {
                 </li> */}
               </ul>
             </li>
-            <li className="nav-item dropdown">
+            {(custid)?(<li className="nav-item dropdown">
+              <a
+                className="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                {custname}
+              </a>
+              <ul className="dropdown-menu">
+                <li>
+                <Link className="dropdown-item" onClick={handleClick}>
+                Log out
+              </Link>
+                </li>
+                </ul>
+                </li>):(
+              <div className="d-flex">
+              <li className="nav-item dropdown">
               <a
                 className="nav-link dropdown-toggle"
                 href="#"
@@ -125,6 +155,8 @@ function Nav() {
                 </li>
               </ul>
             </li>
+            </div>
+            )}
             <li>
             <Link className="nav-link active" to="/viewcart">Cart</Link>
             </li>

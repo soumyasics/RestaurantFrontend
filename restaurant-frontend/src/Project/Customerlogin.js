@@ -20,6 +20,8 @@ function Customerlogin() {
         if (res.data.status === 200) {
           alert(res.data.msg);
           localStorage.setItem("custId",res.data.result._id)
+          localStorage.setItem("fname",res.data.result.fname)
+          window.location.reload(false)
         } else {
           alert(res.data.msg);
         }

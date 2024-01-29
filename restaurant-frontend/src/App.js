@@ -13,12 +13,11 @@ import Staffpassword from "./Project/Staffpassword";
 import Addfood from "./Project/Addfood";
 import Viewfood from "./Project/Viewfood";
 import Deletefood from "./Project/Deletefood";
-import Viewcart from "./Project/Viewcart"
-
+import Viewcart from "./Project/Viewcart";
 
 
 function App() {
-  
+  let custid = localStorage.getItem("custId");
   return (
     <div>
       <BrowserRouter>

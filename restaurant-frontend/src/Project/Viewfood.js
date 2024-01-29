@@ -48,13 +48,10 @@ function Viewfood() {
                 />
                 <div>
                   <h4 className="mt-2">{x.foodname}</h4>
-                  <h5 className="mt-2">
-                    Price: {"\u20B9"}
-                    {x.price}
-                  </h5>
+                  
                   <div>
                     <label className="form-label me-4">Quantity:</label>
-                    <select name="count" onChange={(a)=>{setCartdata({ ...cartdata, [a.target.name]: a.target.value });}
+                    <select name="count" onChange={(a)=>{setCartdata({ ...cartdata, [a.target.name]: a.target.value });x.price=x.price*a.target.value}
                   }>
                       <option value={1}>1</option>
                       <option value={2}>2</option>
@@ -68,6 +65,10 @@ function Viewfood() {
                       <option value={10}>10</option>
                     </select>
                   </div>
+                  <h4 className="mb-2">
+                    Price: {"\u20B9"}
+                    {x.price}
+                  </h4>
                   <button className="btn btn-primary" onClick={()=>{handleClick(x._id)}}>
                     Add cart
                   </button>
