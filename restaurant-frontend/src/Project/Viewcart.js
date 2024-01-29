@@ -16,7 +16,7 @@ function Viewcart() {
     fetchCart();
   }, []);
 
-  const handleClick = () => {
+  const handleDelete = () => {
     axios
       .post("http://localhost:3500/deletecartitem")
       .then((res) => {
@@ -32,21 +32,20 @@ function Viewcart() {
       });
   };
 
-  const handleCheckout =()=>{
+  const handleCheckout = () => {
     axios.post("http://localhost:3500/addorder",{state:state})
-  
-  .then((res) => {
-    console.log(res);
-    if (res.data.status === 200) {
-      alert(res.data.msg);
-    } else {
-      alert(res.data.msg);
-    }
-  })
-  .catch((err) => {
-    console.log(err);
-  });
-};
+    .then((res) => {
+      console.log(res);
+      if (res.data.status === 200) {
+        alert(res.data.msg);
+      } else {
+        alert(res.data.msg);
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  }
 
   return (
     <div>
@@ -83,7 +82,7 @@ function Viewcart() {
                 </div>
               </div>
               <button
-                onClick={handleClick}
+                onClick={handleDelete}
                 style={{ height: "2.5rem" }}
                 className="mt-5 btn btn-danger"
               >
