@@ -14,6 +14,7 @@ import Addfood from "./Project/Addfood";
 import Viewfood from "./Project/Viewfood";
 import Deletefood from "./Project/Deletefood";
 import Viewcart from "./Project/Viewcart";
+import Payment from "./Project/Payment";
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
       <Route exact path="/viewfood" element={<Viewfood/>}/>
       <Route exact path="/deletefood" element={<Deletefood/>}/>
       <Route exact path="/viewcart" element={<Viewcart/>}/>
+      <Route exact path="/payment" element={<Payment/>}/>
       </Routes>
       </BrowserRouter>
     </div>
