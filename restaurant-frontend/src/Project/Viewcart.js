@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function Viewcart() {
   const [state, setState] = useState([]);
@@ -97,7 +98,12 @@ function Viewcart() {
             </span>
           </p>
           <div className="d-grid me-3 justify-content-md-end">
-            <button className="btn btn-success me-md-2" onClick={handleCheckout}>Check out</button>
+            <button className="btn btn-success me-md-2" onClick={handleCheckout}> <Link
+                to="/payment"
+                className="link-light link-underline-opacity-0"
+              >
+                Check out
+              </Link></button>
           </div>
         </ul>
       ) : (

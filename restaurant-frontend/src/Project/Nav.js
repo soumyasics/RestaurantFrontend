@@ -160,9 +160,7 @@ function Nav() {
             <li>
             <Link className="nav-link active" to="/viewcart">Cart</Link>
             </li>
-            <li>
-            <Link className="nav-link active" to="/payment">Payment</Link>
-            </li>
+
           </ul>
         </div>
       </nav>

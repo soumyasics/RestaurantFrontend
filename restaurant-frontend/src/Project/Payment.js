@@ -18,7 +18,7 @@ function Payment() {
           <div class="form-group">
               <label for="PaymentAmount">Payment amount</label>
               <div class="amount-placeholder">
-                  <span>$</span>
+                  <span>{"\u20B9"}</span>
                   <span>500.00</span>
               </div>
           </div>
@@ -54,7 +54,7 @@ function Payment() {
           </div>
           <button id="PayButton" class="btn btn-block btn-success submit-button" type="submit">
               <span class="submit-button-lock"></span>
-              <span class="align-middle">Pay $500.00</span>
+              <span class="align-middle">Pay {"\u20B9"}500.00</span>
           </button>
       </form>
   </div>
