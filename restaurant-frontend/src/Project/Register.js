@@ -1,6 +1,5 @@
-
 import React, { useState } from "react";
-import axios from 'axios';
+import axios from "axios";
 
 function Register() {
   const [data, setData] = useState({
@@ -24,15 +23,14 @@ function Register() {
       .post("http://localhost:3000/userregistration", data)
       .then((res) => {
         console.log(res);
-        if(res.data.status===200){
-            alert("Register Sucessfully");
-        }
-        else{
-            alert("Invalid Registration");
+        if (res.data.status === 200) {
+          alert("Register Sucessfully");
+        } else {
+          alert("Invalid Registration");
         }
       })
       .catch((err) => {
-       console.log(err);
+        console.log(err);
       });
   };
 

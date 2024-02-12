@@ -42,10 +42,10 @@ function Staffregister() {
   };
 
   return (
-    <div>
+    <div className="mb-5">
       <div
         className="form-control d-flex mx-auto"
-        style={{ width: "28rem", backgroundColor: "orange" }}
+        style={{ width: "28rem",marginTop: "1rem", backgroundColor: "orange" }}
       >
         <form>
           <h2 className="text-center mt-4 mb-3">Staff Registration</h2>
@@ -104,7 +104,9 @@ function Staffregister() {
                 className="p-0 mx-2 form-check-input"
                 style={{ marginTop: "0.8rem" }}
               ></input>
-              <label className="form-label mt-2 " htmlFor="male">Male</label>
+              <label className="form-label mt-2 " htmlFor="male">
+                Male
+              </label>
               <input
                 id="female"
                 type="radio"
@@ -115,7 +117,9 @@ function Staffregister() {
                 className="p-0 mx-2 form-check-input"
                 style={{ marginTop: "0.8rem" }}
               ></input>
-              <label className="form-label mt-2" htmlFor="female">Female</label>
+              <label className="form-label mt-2" htmlFor="female">
+                Female
+              </label>
             </div>
           </div>
           <div className="d-flex p-2">
@@ -168,9 +172,7 @@ function Staffregister() {
               Salary:
             </label>
             <div className="input-group" style={{ width: "20rem" }}>
-              <span className="input-group-text">
-                Rs.
-              </span>
+              <span className="input-group-text">Rs.</span>
               <input
                 type="tel"
                 id="salary"
@@ -201,16 +203,18 @@ function Staffregister() {
           </div>
           <div className="d-flex p-2">
             <label className="form-label mt-2 w-50" htmlFor="designation">
-                Designation:
+              Designation:
             </label>
-            <textarea id="designation"
+            <textarea
+              id="designation"
               className="form-control"
               style={{ width: "20rem" }}
               type="text"
               name="designation"
               placeholder="Enter Desigination"
               required
-              onChange={handleChange}></textarea>
+              onChange={handleChange}
+            ></textarea>
           </div>
           <div className="text-center mt-3 mb-3">
             <button className="w-25 btn btn-success" onClick={handleSubmit}>

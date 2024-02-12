@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function Customerlogin() {
+  const mainnavigate = useNavigate();
   const [data, setData] = useState({
     email: "",
     password: "",
@@ -19,9 +21,10 @@ function Customerlogin() {
         console.log(res);
         if (res.data.status === 200) {
           alert(res.data.msg);
-          localStorage.setItem("custId",res.data.result._id)
-          localStorage.setItem("fname",res.data.result.fname)
-          window.location.reload(false)
+          localStorage.setItem("custId", res.data.result._id);
+          localStorage.setItem("fname", res.data.result.fname);
+          mainnavigate("/viewfood");
+          window.location.reload(false);
         } else {
           alert(res.data.msg);
         }
@@ -31,7 +34,7 @@ function Customerlogin() {
       });
   };
   return (
-    <div>
+    <div className="mb-5">
       <form>
         <div
           className="form-control mx-auto d-block "

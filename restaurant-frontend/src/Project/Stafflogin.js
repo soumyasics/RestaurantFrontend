@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function Stafflogin() {
+  const navigate = useNavigate();
   const [data, setData] = useState({
     email: "",
     password: "",
@@ -14,12 +16,15 @@ function Stafflogin() {
     a.preventDefault();
     console.log(data);
     axios
-      .post("http://localhost:3500/stafflogin", data,)
+      .post("http://localhost:3500/stafflogin", data)
       .then((res) => {
         console.log(res);
         if (res.data.status === 200) {
           alert(res.data.msg);
-          localStorage.setItem("staffId",res.data.result._id)
+          localStorage.setItem("staffId", res.data.result._id);
+          localStorage.setItem("sfname", res.data.result.fname);
+          navigate("/viewfood");
+          window.location.reload(false);
         } else {
           alert(res.data.msg);
         }
@@ -29,7 +34,7 @@ function Stafflogin() {
       });
   };
   return (
-    <div>
+    <div className="mb-5">
       <form>
         <div
           className="form-control mx-auto d-block "
@@ -75,7 +80,10 @@ function Stafflogin() {
             </button>
           </div>
           <div className="text-center mt-3 mb-3">
-            <a href="/staffpassword" style={{ textDecoration: "none", color: "red" }}>
+            <a
+              href="/staffpassword"
+              style={{ textDecoration: "none", color: "red" }}
+            >
               Forget password
             </a>
           </div>
