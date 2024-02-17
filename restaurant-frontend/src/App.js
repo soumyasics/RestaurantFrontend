@@ -21,6 +21,11 @@ import ViewOrders from "./Project/ViewOrders";
 import Adminlogin from "./Project/Adminlogin";
 import Adminnav from "./Project/Adminnav";
 import Adminviewfood from "./Project/Adminviewfood";
+import Customerorders from "./Project/Customerorders";
+import Staffviewfood from "./Project/Staffviewfood";
+import Stafforderconfirm from "./Project/Stafforderconfirm";
+import Staffvieworder from "./Project/Staffvieworder";
+import Stafforders from "./Project/Stafforders";
 
 
 function App() {
@@ -38,13 +43,18 @@ function App() {
       <Route exact path="/stafflogin" element={[<Nav/>,<Stafflogin/>]}/>
       <Route exact path="/staffpassword" element={[<Nav/>,<Staffpassword/>]}/>
       <Route exact path="/viewfood" element={[<Nav/>,<Viewfood/>]}/>
+      <Route exact path="/staffviewfood" element={[<Nav/>,<Staffviewfood/>]}/>
       <Route exact path="/admin/addfood" element={[<Adminnav/>,<Addfood/>]}/>
       <Route exact path="/admin/viewfood" element={[<Adminnav/>,<Adminviewfood/>]}/>
       <Route exact path="/admin/editfood" element={[<Adminnav/>,<Editfood/>]}/>
+      <Route exact path="/admin/viewcustomerorder" element={[<Adminnav/>,<Customerorders/>]}/>
       <Route exact path="/admin/editfooddetails/:id" element={[<Adminnav/>,<Editfooddetails/>]}/>
       <Route exact path="/viewcart" element={[<Nav/>,<Viewcart/>]}/>
       <Route exact path="/payment" element={[<Nav/>,<Payment/>]}/>
+      <Route exact path="/orderconfirm" element={[<Nav/>,<Stafforderconfirm/>]}/>
       <Route exact path="/vieworders" element={[<Nav/>,<ViewOrders/>]}/>
+      <Route exact path="/staffvieworders" element={[<Nav/>,<Staffvieworder/>]}/>
+      <Route exact path="/admin/viewstafforder" element={[<Adminnav/>,<Stafforders/>]}/>
       </Routes>
       <Footer/>
       </BrowserRouter>

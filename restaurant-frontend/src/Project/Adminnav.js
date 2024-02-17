@@ -2,15 +2,15 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 function Adminnav() {
-    const navigate = useNavigate();
-    let adminid = localStorage.getItem("admin");
+  const navigate = useNavigate();
+  let adminid = localStorage.getItem("admin");
 
-    const handlelogout = () => {
-        adminid = localStorage.removeItem("admin");
-        alert("Admin logged out")
-        navigate("/")
-        window.location.reload(false);
-    }
+  const handlelogout = () => {
+    adminid = localStorage.removeItem("admin");
+    alert("Admin logged out");
+    navigate("/");
+    window.location.reload(false);
+  };
 
   return (
     <div className="sticky-top">
@@ -31,6 +31,34 @@ function Adminnav() {
             <span className="navbar-toggler-icon"></span>
           </button>
           <ul className="nav justify-content-end mx-5">
+            <li className="nav-item dropdown">
+              <Link className="nav-link" to="/admin/Home">
+                Home
+              </Link>
+            </li>
+            <li className="nav-item dropdown">
+              <a
+                className="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                View Orders
+              </a>
+              <ul className="dropdown-menu">
+                <li>
+                  <Link className="dropdown-item" to="/admin/viewcustomerorder">
+                    Customer Orders
+                  </Link>
+                </li>
+                <li>
+                  <Link className="dropdown-item" to="/admin/viewstafforder">
+                    Staff Orders
+                  </Link>
+                </li>
+              </ul>
+            </li>
             <li className="nav-item dropdown">
               <a
                 className="nav-link dropdown-toggle"
@@ -77,8 +105,6 @@ function Adminnav() {
                 </li>
               </ul>
             </li>
-
-
           </ul>
         </div>
       </nav>

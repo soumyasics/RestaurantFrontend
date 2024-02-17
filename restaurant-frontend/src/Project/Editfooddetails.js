@@ -1,9 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function Editfooddetails() {
   const { id } = useParams();
+  const navigate = useNavigate()
 
   const [data, setData] = useState({
     foodname: "",
@@ -40,6 +41,7 @@ function Editfooddetails() {
       .then((res) => {
         console.log(res);
         alert("Updated successfully");
+        navigate("/admin/editfood")
       })
       .catch((err) => {
         console.log("Error", err);

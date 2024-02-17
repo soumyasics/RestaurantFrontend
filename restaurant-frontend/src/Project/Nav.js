@@ -96,12 +96,12 @@ function Nav() {
             ) : staffid ? (
               <div className="d-flex">
                 <li className="nav-item dropdown">
-                  <Link className="nav-link" to="#">
+                  <Link className="nav-link" to="/staffvieworders">
                     View Order
                   </Link>
                 </li>
                 <li className="nav-item dropdown">
-                  <Link className="nav-link" to="/viewfood">
+                  <Link className="nav-link" to="/staffviewfood">
                     Menu item
                   </Link>
                 </li>
@@ -123,12 +123,7 @@ function Nav() {
                     </li>
                   </ul>
                 </li>
-                <li>
-                  <Link className="nav-link active" to="/viewcart">
-                    cart
-                    {/* <span class="badge text-primary">2</span> */}
-                  </Link>
-                </li>
+                
               </div>
             ) : (
               <div className="d-flex">

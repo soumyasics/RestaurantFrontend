@@ -1,25 +1,20 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 
-function ViewOrders() {
-  const [state, setState] = useState([]);
-  let custid = localStorage.getItem("custId");
-
-  const fetchorder = async () => {
-    const response = await axios.get(
-      `http://localhost:3500/vieworderdetails/${custid}`
-    );
-    console.log(response.data.result);
-    setState(response.data.result);
-  };
-  useEffect(() => {
-    fetchorder();
-  }, []);
-
+function Stafforders() {
+    const [state, setState] = useState([]);
+    const fetchstafforder = async () => {
+        const response = await axios.get("http://localhost:3500/viewstafforders");
+        console.log(response.data.result);
+        setState(response.data.result);
+      };
+      useEffect(() => {
+        fetchstafforder();
+      }, []);
   return (
     <div className="mt-5">
-      {state.length > 0 ? (
+        {state.length > 0 ? (
         <ul
           style={{ listStyleType: "none", width: "48rem" }}
           className="p-5 pt-0 mx-auto"
@@ -27,8 +22,11 @@ function ViewOrders() {
           {state.map((x) => (
             <li
               key={x._id}
-              className="d-flex shadow-lg p-3 bg-body-tertiary rounded mb-4 container-fluid"
+              className="shadow-lg p-3 bg-body-tertiary rounded mb-4 container-fluid"
             >
+                <div><h4 className="text-center">Customer Name : {x.customername}</h4></div>
+                <div><h4 className="text-center mb-2">Ordered By : {x.staffid.fname}</h4></div>
+              <div className="d-flex">
               <img
                 src={`http://localhost:3500/${x.foodid.image}`}
                 className="img-fluid me-4"
@@ -41,7 +39,7 @@ function ViewOrders() {
                   <h5 className="me-5">
                     Food price:{" "}
                     <span className="ms-1">
-                      {"\u20B9"} {x.count * x.amount}
+                      {"\u20B9"} {x.count * x.foodid.price}
                     </span>
                   </h5>
                 </div>
@@ -57,10 +55,11 @@ function ViewOrders() {
                   Quantity: <span className="ms-1">{x.count}</span>
                 </h5>
               </div>
+              </div>
             </li>
           ))}
           <div className="text-center mt-2">
-            <Link to="/viewfood" className="btn btn-danger">
+            <Link to="/admin/Home" className="btn btn-danger">
               Close
             </Link>
           </div>
@@ -71,7 +70,7 @@ function ViewOrders() {
         </h2>
       )}
     </div>
-  );
+  )
 }
 
-export default ViewOrders;
+export default Stafforders

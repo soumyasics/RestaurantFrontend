@@ -23,7 +23,7 @@ function Stafflogin() {
           alert(res.data.msg);
           localStorage.setItem("staffId", res.data.result._id);
           localStorage.setItem("sfname", res.data.result.fname);
-          navigate("/viewfood");
+          navigate("/staffviewfood");
           window.location.reload(false);
         } else {
           alert(res.data.msg);

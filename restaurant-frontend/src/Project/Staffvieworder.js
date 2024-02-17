@@ -2,21 +2,20 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-function ViewOrders() {
-  const [state, setState] = useState([]);
-  let custid = localStorage.getItem("custId");
+function Staffvieworder() {
+    const [state, setState] = useState([]);
+    let staffid = localStorage.getItem("staffId");
 
-  const fetchorder = async () => {
-    const response = await axios.get(
-      `http://localhost:3500/vieworderdetails/${custid}`
-    );
-    console.log(response.data.result);
-    setState(response.data.result);
-  };
-  useEffect(() => {
-    fetchorder();
-  }, []);
-
+    const fetchorder = async () => {
+        const response = await axios.get(
+          `http://localhost:3500/stafforderdetails/${staffid}`
+        );
+        console.log(response.data.result);
+        setState(response.data.result);
+      };
+      useEffect(() => {
+        fetchorder();
+      }, []);
   return (
     <div className="mt-5">
       {state.length > 0 ? (
@@ -27,8 +26,10 @@ function ViewOrders() {
           {state.map((x) => (
             <li
               key={x._id}
-              className="d-flex shadow-lg p-3 bg-body-tertiary rounded mb-4 container-fluid"
+              className="shadow-lg p-3 bg-body-tertiary rounded mb-4 container-fluid"
             >
+                <h3 className="text-center">Customer name: {" "}{x.customername}</h3>
+              <div className="d-flex">
               <img
                 src={`http://localhost:3500/${x.foodid.image}`}
                 className="img-fluid me-4"
@@ -41,7 +42,7 @@ function ViewOrders() {
                   <h5 className="me-5">
                     Food price:{" "}
                     <span className="ms-1">
-                      {"\u20B9"} {x.count * x.amount}
+                      {"\u20B9"} {x.count * x.foodid.price}
                     </span>
                   </h5>
                 </div>
@@ -57,10 +58,11 @@ function ViewOrders() {
                   Quantity: <span className="ms-1">{x.count}</span>
                 </h5>
               </div>
+              </div>
             </li>
           ))}
           <div className="text-center mt-2">
-            <Link to="/viewfood" className="btn btn-danger">
+            <Link to="/staffviewfood" className="btn btn-danger">
               Close
             </Link>
           </div>
@@ -71,7 +73,7 @@ function ViewOrders() {
         </h2>
       )}
     </div>
-  );
+  )
 }
 
-export default ViewOrders;
+export default Staffvieworder

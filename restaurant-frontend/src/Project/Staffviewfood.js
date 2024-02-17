@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
-function Viewfood() {
+function Staffviewfood() {
   const [state, setState] = useState([]);
-  let custid = localStorage.getItem("custId");
+  const navigate = useNavigate()
+  let stafid = localStorage.getItem("staffId");
 
-  const [cartdata, setCartdata] = useState({
-    userid: custid,
+  const [staffcartdata, setStaffcartdata] = useState({
+    staffid: stafid,
     count: "1",
   });
-  console.log(cartdata);
+  console.log(staffcartdata);
   const fetchFood = async () => {
     const response = await axios.get("http://localhost:3500/viewfood");
     console.log(response.data.result);
@@ -22,11 +24,12 @@ function Viewfood() {
   const handleClick = (id) => {
     console.log(id);
     axios
-        .post(`http://localhost:3500/addcart/${id}`, cartdata)
+        .post(`http://localhost:3500/staffaddcart/${id}`, staffcartdata)
         .then((res) => {
           console.log(res);
           if (res.data.status === 200) {
-            alert(res.data.msg);
+            console.log(res.data.msg)
+            navigate("/orderconfirm")
           } else {
             alert(res.data.msg);
           }
@@ -34,7 +37,7 @@ function Viewfood() {
         .catch((err) => {
           console.log(err);
         });
-  };
+    }
 
   return (
     <div className="m-4">
@@ -55,10 +58,10 @@ function Viewfood() {
                   <select
                     name="count"
                     onChange={(a) => {
-                      setCartdata({
-                        ...cartdata,
-                        [a.target.name]: a.target.value,
-                      });
+                        setStaffcartdata({
+                            ...staffcartdata,
+                            [a.target.name]: a.target.value,
+                          });
                       x.amount=x.price*a.target.value;
                     }}
                   >
@@ -84,7 +87,7 @@ function Viewfood() {
                     handleClick(x._id);
                   }}
                 >
-                  Add cart
+                  Buy now
                 </button>
               </div>
             </div>
@@ -95,4 +98,5 @@ function Viewfood() {
   );
 }
 
-export default Viewfood;
+
+export default Staffviewfood;
